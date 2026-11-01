@@ -68,6 +68,8 @@ blob_fixups: blob_fixups_user_type = {
     'odm/etc/gps.conf': blob_fixup()
         .binary_regex_replace(b'com.oplus.locationproxy', b'com.google.android.carrierlocation')
         .binary_regex_replace(b'DEBUG_LEVEL = 3', b'DEBUG_LEVEL = 2'),
+    'odm/etc/izat.conf': blob_fixup()
+        .patch_file('blob-patches/izat.patch'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
     'system/framework/WfdCommon.jar': blob_fixup()
