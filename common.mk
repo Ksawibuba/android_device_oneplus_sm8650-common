@@ -83,8 +83,6 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
-# BCR
-$(call inherit-product, vendor/bcr/bcr.mk)
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -105,9 +103,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.boot-service.qti.recovery
 
-# Passthrough charging
-PRODUCT_PACKAGES += \
-    BypassCharge
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -263,9 +258,6 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.oplus
 
-# MatLog
-PRODUCT_PACKAGES += \
-    MatLog
 
 # Media
 PRODUCT_COPY_FILES += \
